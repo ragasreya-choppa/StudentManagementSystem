@@ -28,7 +28,7 @@ public class Main {
 
             switch (userInput) {
                 case 1:
-                    //System.out.println("Add Student");
+                    System.out.println("Adding Student");
                     System.out.println("Enter Students ID: ");
                     int studentID = sc.nextInt();
                     System.out.println("Enter Students Name: ");
@@ -42,7 +42,7 @@ public class Main {
                     System.out.println("Student added Successfully!");
                     break;
                 case 2:
-                    //System.out.println("View All Students");
+                    System.out.println("Viewing All Students");
                     if (students.size() == 0) {
                         System.out.println("No Students Found!");
                     } else {
@@ -52,7 +52,7 @@ public class Main {
                     }
                     break;
                 case 3:
-                    System.out.println("Search Students");
+                    System.out.println("Searching Students");
                     System.out.println("Enter Student ID to Search: ");
                     studentID = sc.nextInt();
                     boolean found = false;
