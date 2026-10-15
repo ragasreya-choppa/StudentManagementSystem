@@ -28,23 +28,23 @@ public class Main {
 
             switch (userInput) {
                 case 1:
-                    System.out.println("Adding Student");
+                    System.out.println("Adding Student...");
                     System.out.println("Enter Students ID: ");
                     int studentID = sc.nextInt();
-                    System.out.println("Enter Students Name: ");
+                    System.out.println("Enter Student Name: ");
                     String studentName = sc.next();
-                    System.out.println("Enter Students Course: ");
+                    System.out.println("Enter Student Course: ");
                     String studentCourse = sc.next();
-                    System.out.println("Enter Students Age: ");
+                    System.out.println("Enter Student Age: ");
                     int studentAge = sc.nextInt();
                     Student s = new Student(studentID, studentName, studentCourse, studentAge);
                     students.add(s);
                     System.out.println("Student added Successfully!");
                     break;
                 case 2:
-                    System.out.println("Viewing All Students");
+                    System.out.println("Viewing All Students...");
                     if (students.size() == 0) {
-                        System.out.println("No Students Found!");
+                        System.out.println("No Student Found!");
                     } else {
                         for (int i = 0; i < students.size(); i++) {
                             System.out.println("ID: " + students.get(i).getStudentID() + " " + "Name: " + students.get(i).getName() + " " + "Course: " + students.get(i).getCourse() + " " + "Age: " + students.get(i).getAge());
@@ -52,7 +52,7 @@ public class Main {
                     }
                     break;
                 case 3:
-                    System.out.println("Searching Students");
+                    System.out.println("Searching Students...");
                     System.out.println("Enter Student ID to Search: ");
                     studentID = sc.nextInt();
                     boolean found = false;
@@ -71,7 +71,7 @@ public class Main {
                     }
                     break;
                 case 4:
-                    System.out.println("Update Student");
+                    System.out.println("Updating Student...");
                     System.out.println("Enter Student ID to Update: ");
                     studentID = sc.nextInt();
                     boolean found1 = false;
@@ -117,7 +117,7 @@ public class Main {
                     }
                     break;
                 case 5:
-                    System.out.println("Delete Student");
+                    System.out.println("Deleting Student...");
                     System.out.println("Enter Student ID to Delete: ");
                     studentID = sc.nextInt();
                     boolean found2 = false;
