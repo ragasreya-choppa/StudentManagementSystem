@@ -29,17 +29,32 @@ public class Main {
             switch (userInput) {
                 case 1:
                     System.out.println("Adding Student...");
-                    System.out.println("Enter Students ID: ");
+                    System.out.println("Enter Student ID: ");
                     int studentID = sc.nextInt();
-                    System.out.println("Enter Student Name: ");
-                    String studentName = sc.next();
-                    System.out.println("Enter Student Course: ");
-                    String studentCourse = sc.next();
-                    System.out.println("Enter Student Age: ");
-                    int studentAge = sc.nextInt();
-                    Student s = new Student(studentID, studentName, studentCourse, studentAge);
-                    students.add(s);
-                    System.out.println("Student added Successfully!");
+                    boolean idExists = false;
+                    for(int i=0;i<students.size();i++)
+                    {
+                        if((studentID == students.get(i).getStudentID()))
+                        {
+                            System.out.println("ID Already Exists! Try Entering Unique ID!");
+                            idExists = true;
+                            break;
+                        }
+
+                    }
+                    if(!idExists)
+                    {
+                        System.out.println("Enter Student Name: ");
+                        String studentName = sc.next();
+                        System.out.println("Enter Student Course: ");
+                        String studentCourse = sc.next();
+                        System.out.println("Enter Student Age: ");
+                        int studentAge = sc.nextInt();
+                        Student s = new Student(studentID, studentName, studentCourse, studentAge);
+                        students.add(s);
+                        System.out.println("Student added Successfully!");
+                    }
+
                     break;
                 case 2:
                     System.out.println("Viewing All Students...");
