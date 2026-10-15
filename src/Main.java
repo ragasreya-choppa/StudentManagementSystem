@@ -31,6 +31,7 @@ public class Main {
                     System.out.println("Adding Student...");
                     System.out.println("Enter Student ID: ");
                     int studentID = sc.nextInt();
+                    sc.nextLine();// consume the leftover new-line
                     boolean idExists = false;
                     for(int i=0;i<students.size();i++)
                     {
@@ -45,9 +46,9 @@ public class Main {
                     if(!idExists)
                     {
                         System.out.println("Enter Student Name: ");
-                        String studentName = sc.next();
+                        String studentName = sc.nextLine();
                         System.out.println("Enter Student Course: ");
-                        String studentCourse = sc.next();
+                        String studentCourse = sc.nextLine();
                         System.out.println("Enter Student Age: ");
                         int studentAge = sc.nextInt();
                         Student s = new Student(studentID, studentName, studentCourse, studentAge);
