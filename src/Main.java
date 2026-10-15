@@ -57,7 +57,8 @@ public class Main {
                     studentID = sc.nextInt();
                     boolean found = false;
                     for (int i = 0; i < students.size(); i++) {
-                        if (studentID == students.get(i).getStudentID()) {
+                        if (studentID == students.get(i).getStudentID())
+                        {
                             System.out.println("Student Found!");
                             System.out.println("ID: " + students.get(i).getStudentID() + " " + "Name: " + students.get(i).getName() + " " + "Course: " + students.get(i).getCourse() + " " + "Age: " + students.get(i).getAge());
                             found = true;
@@ -87,19 +88,19 @@ public class Main {
                             switch(fieldToUpdate.toLowerCase())
                             {
                                 case "name":
-                                    System.out.println("Enter the name you wanted to update to: ");
+                                    System.out.println("Enter the new name: ");
                                     String nameUpdatedTo = sc.next();
                                     students.get(i).setName(nameUpdatedTo);
                                     System.out.println("Student Name Updated Successfully!");
                                     break;
                                 case "course":
-                                    System.out.println("Enter the course you wanted to update to: ");
+                                    System.out.println("Enter the new course: ");
                                     String courseUpdatedTo = sc.next();
                                     students.get(i).setCourse(courseUpdatedTo);
                                     System.out.println("Student Course Updated SuccessFully!");
                                     break;
                                 case "age":
-                                    System.out.println("Enter the Age you wanted to update to: ");
+                                    System.out.println("Enter the new Age: ");
                                     int ageUpdatedTo=sc.nextInt();
                                     students.get(i).setAge(ageUpdatedTo);
                                     System.out.println("Student Age Updated SuccessFully!");
@@ -117,6 +118,24 @@ public class Main {
                     break;
                 case 5:
                     System.out.println("Delete Student");
+                    System.out.println("Enter Student ID to Delete: ");
+                    studentID = sc.nextInt();
+                    boolean found2 = false;
+                    for (int i = 0; i < students.size(); i++)
+                    {
+                        if (studentID == students.get(i).getStudentID())
+                        {
+                            System.out.println("Student Found!");
+                            students.remove(i);
+                            System.out.println("Student Deleted Successfully!");
+                            found2=true;
+                            break;
+                        }
+                    }
+                    if(!found2)
+                    {
+                        System.out.println("Student Not Found!");
+                    }
                     break;
                 case 6:
                     break;
