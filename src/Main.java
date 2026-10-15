@@ -54,7 +54,6 @@ public class Main {
                         students.add(s);
                         System.out.println("Student added Successfully!");
                     }
-
                     break;
                 case 2:
                     System.out.println("Viewing All Students...");
