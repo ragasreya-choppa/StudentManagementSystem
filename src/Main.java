@@ -62,7 +62,6 @@ public class Main {
                             System.out.println("ID: " + students.get(i).getStudentID() + " " + "Name: " + students.get(i).getName() + " " + "Course: " + students.get(i).getCourse() + " " + "Age: " + students.get(i).getAge());
                             found = true;
                             break;
-
                         }
                     }
                     if(!found)
@@ -72,6 +71,49 @@ public class Main {
                     break;
                 case 4:
                     System.out.println("Update Student");
+                    System.out.println("Enter Student ID to Update: ");
+                    studentID = sc.nextInt();
+                    boolean found1 = false;
+                    for (int i = 0; i < students.size(); i++) {
+                        if (studentID == students.get(i).getStudentID()) {
+                            System.out.println("Student Found!");
+                            System.out.println("ID: " + students.get(i).getStudentID());
+                            System.out.println("Name: " + students.get(i).getName());
+                            System.out.println("Course: "+ students.get(i).getCourse());
+                            System.out.println("Age: "+ students.get(i).getAge());
+                            found1 = true;
+                            System.out.println("Choose a Field to Update:  name/course/age- ");
+                            String fieldToUpdate=sc.next();
+                            switch(fieldToUpdate.toLowerCase())
+                            {
+                                case "name":
+                                    System.out.println("Enter the name you wanted to update to: ");
+                                    String nameUpdatedTo = sc.next();
+                                    students.get(i).setName(nameUpdatedTo);
+                                    System.out.println("Student Name Updated Successfully!");
+                                    break;
+                                case "course":
+                                    System.out.println("Enter the course you wanted to update to: ");
+                                    String courseUpdatedTo = sc.next();
+                                    students.get(i).setCourse(courseUpdatedTo);
+                                    System.out.println("Student Course Updated SuccessFully!");
+                                    break;
+                                case "age":
+                                    System.out.println("Enter the Age you wanted to update to: ");
+                                    int ageUpdatedTo=sc.nextInt();
+                                    students.get(i).setAge(ageUpdatedTo);
+                                    System.out.println("Student Age Updated SuccessFully!");
+                                    break;
+                                default:
+                                    System.out.println("Invalid Input! Only Three Fields are allowed to Update");
+                            }
+                            break;
+                        }
+                    }
+                    if(!found1)
+                    {
+                        System.out.println("Student Not Found!");
+                    }
                     break;
                 case 5:
                     System.out.println("Delete Student");
