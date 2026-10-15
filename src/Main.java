@@ -79,8 +79,7 @@ public class Main {
                 case 6:
                     break;
                 default:
-                    System.out.println("Onvalid Input! Try Entering between 1 and 6");
-
+                    System.out.println("Invalid Input! Try Entering between 1 and 6");
 
             }
 
