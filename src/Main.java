@@ -51,9 +51,17 @@ public class Main {
                         String studentCourse = sc.nextLine();
                         System.out.println("Enter Student Age: ");
                         int studentAge = sc.nextInt();
-                        Student s = new Student(studentID, studentName, studentCourse, studentAge);
-                        students.add(s);
-                        System.out.println("Student added Successfully!");
+                        if(studentAge<1 || studentAge>120)
+                        {
+                            System.out.println("Invalid Age! Try Entering Age between 1 and 120");
+                        }
+                        else
+                        {
+                            Student s = new Student(studentID, studentName, studentCourse, studentAge);
+                            students.add(s);
+                            System.out.println("Student added Successfully!");
+                        }
+
                     }
                     break;
                 case 2:
