@@ -65,17 +65,19 @@ public class Main {
                     }
                     break;
                 case 2:
-                    viewAllStudents(students);
-                    break;
-                    /*System.out.println("Viewing All Students...");
-                    if (students.size() == 0) {
+                    System.out.println("Viewing All Students...");
+                    if (students.size() == 0)
+                    {
                         System.out.println("No Student Found!");
-                    } else {
-                        for (int i = 0; i < students.size(); i++) {
+                    }
+                    else
+                    {
+                        for (int i = 0; i < students.size(); i++)
+                        {
                             System.out.println("ID: " + students.get(i).getStudentID() + " " + "Name: " + students.get(i).getName() + " " + "Course: " + students.get(i).getCourse() + " " + "Age: " + students.get(i).getAge());
                         }
                     }
-                    break;*/
+                    break;
                 case 3:
                     System.out.println("Searching Students...");
                     System.out.println("Enter Student ID to Search: ");
@@ -180,23 +182,6 @@ public class Main {
 
         }
     }
-
-    public static void viewAllStudents(ArrayList<Student> students)
-    {
-        System.out.println("Viewing All Students...");
-        if (students.size() == 0)
-        {
-            System.out.println("No Student Found!");
-        } else
-        {
-            for (int i = 0; i < students.size(); i++)
-            {
-                System.out.println("ID: " + students.get(i).getStudentID() + " " + "Name: " + students.get(i).getName() + " " + "Course: " + students.get(i).getCourse() + " " + "Age: " + students.get(i).getAge());
-            }
-        }
-
-    }
-
 
 }
 
