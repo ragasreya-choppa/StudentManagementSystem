@@ -97,6 +97,7 @@ public class Main {
                     System.out.println("Updating Student...");
                     System.out.println("Enter Student ID to Update: ");
                     studentID = sc.nextInt();
+                    sc.nextLine();
                     boolean found1 = false;
                     for (int i = 0; i < students.size(); i++) {
                         if (studentID == students.get(i).getStudentID()) {
@@ -107,26 +108,34 @@ public class Main {
                             System.out.println("Age: "+ students.get(i).getAge());
                             found1 = true;
                             System.out.println("Choose a Field to Update:  name/course/age- ");
-                            String fieldToUpdate=sc.next();
+                            String fieldToUpdate=sc.nextLine();
                             switch(fieldToUpdate.toLowerCase())
                             {
                                 case "name":
                                     System.out.println("Enter the new name: ");
-                                    String nameUpdatedTo = sc.next();
+                                    String nameUpdatedTo = sc.nextLine();
                                     students.get(i).setName(nameUpdatedTo);
                                     System.out.println("Student Name Updated Successfully!");
                                     break;
                                 case "course":
                                     System.out.println("Enter the new course: ");
-                                    String courseUpdatedTo = sc.next();
+                                    String courseUpdatedTo = sc.nextLine();
                                     students.get(i).setCourse(courseUpdatedTo);
                                     System.out.println("Student Course Updated SuccessFully!");
                                     break;
                                 case "age":
                                     System.out.println("Enter the new Age: ");
                                     int ageUpdatedTo=sc.nextInt();
-                                    students.get(i).setAge(ageUpdatedTo);
-                                    System.out.println("Student Age Updated SuccessFully!");
+                                    if(ageUpdatedTo < 1 || ageUpdatedTo > 120)
+                                    {
+                                        System.out.println("Invalid Age! Try Adding Age between 1 and 120");
+                                    }
+                                    else
+                                    {
+                                        students.get(i).setAge(ageUpdatedTo);
+                                        System.out.println("Student Age Updated SuccessFully!");
+
+                                    }
                                     break;
                                 default:
                                     System.out.println("Invalid Input! Only Three Fields are allowed to Update");
